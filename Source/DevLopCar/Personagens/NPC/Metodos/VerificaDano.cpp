@@ -9,31 +9,6 @@
 #include "Delegates/DelegateSignatureImpl.inl"
 #include "DevLopCar/Personagens/NPC/NPC_Base.h"
 
-void ANPC_Base::RecebeDanoTeleportMetodo(ETipoColisao TipoColisao, AActor* Alvo)
-{
-	UWorld* World = GetWorld();
-	check(World);
-
-	APontoSpawn* ObjetoEscolhido = nullptr;
-
-	FVector Local;
-
-	for (TActorIterator<APontoSpawn> It(World); It; ++It)
-	{
-		if (IsValid(ObjetoEscolhido) && (It->GetDistanceTo(this) < ObjetoEscolhido->GetDistanceTo(this)))
-		{
-			ObjetoEscolhido = *It;
-		}
-		else if (!IsValid(ObjetoEscolhido))
-		{
-			ObjetoEscolhido = *It;
-		}
-	}
-	Local = ObjetoEscolhido->GetActorLocation();
-	SetActorLocationAndRotation(FVector(Local.X, Local.Y, Local.Z + 50),
-								ObjetoEscolhido->GetActorRotation(), false, nullptr,
-								ETeleportType::TeleportPhysics);
-}
 
 void ANPC_Base::VerificaLocalDano(float Contador)
 {

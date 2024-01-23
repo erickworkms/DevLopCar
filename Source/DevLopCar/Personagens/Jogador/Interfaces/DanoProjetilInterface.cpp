@@ -8,14 +8,6 @@ void IDanoProjetilInterface::RecebeDanoNPCMetodo()
 {
 }
 
-void IDanoProjetilInterface::DanoAtropelamento()
-{
-}
-
-void IDanoProjetilInterface::RecebeDanoTeleportMetodo(ETipoColisao TipoColisao,AActor* Alvo)
-{
-}
-
 void IDanoProjetilInterface::AdicionaCarro(AActor* Carro)
 {
 }

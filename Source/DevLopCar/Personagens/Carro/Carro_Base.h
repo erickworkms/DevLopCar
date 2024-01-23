@@ -1,4 +1,6 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+//Este projeto foi criado para fins de divulgar conhecimento e pode ser utilizado a vontade.
+
+//This project was created for the purpose of disseminating knowledge and can be used freely.
 
 #pragma once
 
@@ -7,6 +9,7 @@
 #include "Components/BoxComponent.h"
 #include "Perception/AISightTargetInterface.h"
 #include "Components/StaticMeshComponent.h"
+#include "DevLopCar/Personagens/Jogador/Jogador_Base.h"
 #include "DevLopCar/Personagens/Jogador/Interfaces/DanoProjetilInterface.h"
 #include "Carro_Base.generated.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
@@ -30,6 +33,8 @@ public:
 	bool DirecaoDireita = false;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Animacao)
 	bool DirecaoEsquerda = false;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Animacao)
+	float Velocidade = 0;
 	
 	UPROPERTY(VisibleAnywhere, Category = "Components")
 	UStaticMeshComponent* LocalPorta;
@@ -37,11 +42,18 @@ public:
 	UPROPERTY(VisibleAnywhere,BlueprintReadWrite, Category = "Components")
 	TArray<UStaticMeshComponent*> LocalEntrada;
 
+	UPROPERTY(VisibleAnywhere, Category = "Components")
+	AJogador_Base* Jogador;
+
+	UPROPERTY()
+	FString AnimacaoCarro;
+	
 	void MovimentaVeiculoFrente();
 	void MovimentaVeiculoDirecao(float Direcao);
 	void PararVeiculo();
 	void MovimentaVeiculoRe();
 	void MudancaConfigFisicaVeiculo();
+	void VerificaVelocidadeCarro(float valor);
 private:
 	
 	FString CaminhoMesh;
@@ -61,8 +73,8 @@ private:
 	
 	void PadroesVeiculo();
 	void ConfigFisicaVeiculo();
-	
-	virtual void BeginPlay() override;
+
+	virtual void Tick(float DeltaSeconds) override;
 	virtual bool CanBeSeenFrom(const FVector& ObserverLocation, FVector& OutSeenLocation, int32& NumberOfLoSChecksPerformed, float& OutSightStrength, const AActor* IgnoreActor, const bool* bWasVisible, int32* UserData) const override;
 
 	UFUNCTION()
@@ -76,7 +88,6 @@ private:
 			if (inimigoEncontrado)
 			{
 				inimigoEncontrado->AdicionaCarro(this);
-				GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Yellow,"entrou");
 			}
 		}
 	}
@@ -89,7 +100,7 @@ private:
 		if (inimigoEncontrado)
 		{
 			inimigoEncontrado->RemoverCarro();
-			GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Yellow,"falhou");
+			Velocidade = 0;
 		}
 	}
 
@@ -103,7 +114,10 @@ private:
 			IDanoProjetilInterface* inimigoEncontrado = Cast<IDanoProjetilInterface>(InimigoDetectado);
 			if (inimigoEncontrado)
 			{
-				inimigoEncontrado->DanoAtropelamento();
+				if (IsValid(Jogador) && Velocidade > 300)
+				{
+					inimigoEncontrado->DanoMetodo(Jogador);
+				}
 			}
 		}
 	}

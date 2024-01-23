@@ -10,7 +10,7 @@
 #include "Components/StaticMeshComponent.h"
 #include "Blueprint/AIBlueprintHelperLibrary.h"
 #include "DevLopCar/Personagens/Enums/Lista_Enums.h"
-#include "DevLopCar/Personagens/Jogador/Jogador_Base.h"
+#include "DevLopCar/Personagens/Jogador/Interfaces/DanoProjetilInterface.h"
 #include "Plataformas/ObjetivoNPC.h"
 #include "Plataformas/SpawnNPC.h"
 #include "NPC_Base.generated.h"
@@ -18,10 +18,6 @@
 UCLASS()
 class DEVLOPCAR_API ANPC_Base : public ACharacter, public IDanoProjetilInterface
 {
-public:
-	virtual void DanoAtropelamento() override;
-
-private:
 	GENERATED_BODY()
 
 public:
@@ -114,8 +110,6 @@ public:
 
 	void ResetaNPC();
 	
-	virtual void RecebeDanoTeleportMetodo(ETipoColisao TipoColisao, AActor* Alvo) override;
-
 	void InicializaNPC();
 
 	void InicializaAttachPersonagem();

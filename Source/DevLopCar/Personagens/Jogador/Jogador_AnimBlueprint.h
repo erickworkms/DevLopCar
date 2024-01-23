@@ -27,30 +27,12 @@ public:
 	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Animacao")
 	float Velocidade;
 	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Animacao")
-	float AnguloCorpo = 0.f;;
-	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Animacao")
-	float AnguloCameraX = 0.f;;
-	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Animacao")
-	float AnguloCameraY = 0.f;;
-	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Animacao")
-	float Direcao = 0.f;;
-	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Animacao")
-	float VelTempAnimacao = 0.f;;
-	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Animacao")
-	bool ComboAtivo = false;
-	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Animacao")
-	int IndexCombo = 0;
-	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Animacao")
 	TEnumAsByte<TipoEstado> Estado = NoChaoAndando;
 	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Animacao")
 	TEnumAsByte<TipoAcao> Acao = Nada;
 	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Animacao")
 	TEnumAsByte<LadoEscolhido> LadoEscolhido = Dirigir_Frente;
-	
-	//Lista de funções
-	UFUNCTION(CallInEditor, BlueprintCallable, Category=Animacao)
-	void CalculaDirecao(APawn* PersonagemBase);
-	
+		
 	virtual void NativeInitializeAnimation() override;
 	virtual void NativeUpdateAnimation(float DeltaSeconds);
 

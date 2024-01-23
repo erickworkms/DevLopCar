@@ -5,24 +5,6 @@
 #include "Jogador_Base.h"
 #include "GameFramework/CharacterMovementComponent.h"
 
-
-void UJogador_AnimBlueprint::CalculaDirecao(APawn* PersonagemBase)
-{
-	AJogador_Base* PersonagemReferencia = Cast<AJogador_Base>(PersonagemBase);
-	Direcao = CalculateDirection(Personagem->GetVelocity(), Personagem->GetActorRotation());
-
-	if (Velocidade > 500)
-	{
-		VelTempAnimacao = FMath::Clamp(Velocidade /
-									   FMath::Clamp(PersonagemBase->GetMovementComponent()->GetMaxSpeed(),
-													0.0f, PersonagemReferencia->VelocidadeMax), 1.f,5.f);
-	}
-	else
-	{
-		VelTempAnimacao = 1;
-	}
-}
-
 UJogador_AnimBlueprint::UJogador_AnimBlueprint()
 {
 	Vida = 100.f;
@@ -49,15 +31,8 @@ void UJogador_AnimBlueprint::NativeUpdateAnimation(float DeltaSeconds)
 		
 		if (PersonagemReferencia)
 		{
-			CalculaDirecao(PersonagemReferencia);
-
 			Vida = PersonagemReferencia->Vida;
 			Velocidade = PersonagemReferencia->Velocidade;
-			AnguloCorpo = PersonagemReferencia->AnguloCorpo;
-			AnguloCameraX = PersonagemReferencia->AnguloCameraX;
-			AnguloCameraY = PersonagemReferencia->AnguloCameraY;
-			Direcao = PersonagemReferencia->Direcao;
-			VelTempAnimacao = PersonagemReferencia->VelTempAnimacao;
 	
 			Estado = PersonagemReferencia->Estado;
 			Acao = PersonagemReferencia->Acao;

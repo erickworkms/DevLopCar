@@ -4,9 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "ObjetivoNPC.h"
-#include "Plataformas.h"
 #include "PontoSpawnNPC.h"
-#include "Engine/BlockingVolume.h"
 #include "GameFramework/Actor.h"
 #include "SpawnNPC.generated.h"
 

@@ -3,6 +3,8 @@
 //This project was created for the purpose of disseminating knowledge and can be used freely.
 
 #include "DetectaSairCarro.h"
+
+#include "DevLopCar/Personagens/Carro/Carro_Base.h"
 #include "DevLopCar/Personagens/Jogador/Jogador_Base.h"
 
 void UDetectaSairCarro::NotifyBegin(USkeletalMeshComponent* MeshComp, UAnimSequenceBase* Animacao,

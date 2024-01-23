@@ -53,7 +53,7 @@ enum LadoEscolhido
 	Dirigir_FrenteEsquerda UMETA(DisplayName = "DirigirFrenteEsquerda"),
 	Dirigir_Frente UMETA(DisplayName = "DirigirFrente"),
 	Dirigir_AtrasEsquerda UMETA(DisplayName = "DirigirAtrasEsquerda"),
-	Dirigir_AtrasFrente UMETA(DisplayName = "DirigirAtrasFrente"),
+	Dirigir_AtrasFrente UMETA(DisplayName = "DirigirAtrasDireita"),
 	Dirigir_Atras UMETA(DisplayName = "DirigirAtras"),
 	Dano_Direita UMETA(DisplayName = "DanoDireita"),
 	Dano_Esquerda UMETA(DisplayName = "DanoEsquerda"),

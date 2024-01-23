@@ -23,7 +23,7 @@ void AJogador_Base::VerificaEscolhaPersonagem()
 		case Senior:
 			VerificaMeshPersonagem(2);
 			GetMesh()->SetAnimationMode(EAnimationMode::AnimationBlueprint);
-			GetMesh()->SetAnimInstanceClass(Senior_Anim);			
+			GetMesh()->SetAnimInstanceClass(Senior_Anim);
 			break;
 		case Chefe:
 			VerificaMeshPersonagem(3);

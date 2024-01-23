@@ -11,6 +11,6 @@ public class DevLopCar : ModuleRules
 		PrivateDependencyModuleNames.AddRange(new string[] { });
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "HeadMountedDisplay","UMG", "Slate", "SlateCore","NavigationSystem","PhysX","PhysXVehiclesEditor","PhysXCooking","RuntimePhysXCooking","PhysXVehicles","PhysXVehicleLib"});
+		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "HeadMountedDisplay","UMG", "Slate", "SlateCore","NavigationSystem","PhysX","PhysXCooking","RuntimePhysXCooking","PhysXVehicles","PhysXVehicleLib"});
 	}
 }

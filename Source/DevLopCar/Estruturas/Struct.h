@@ -11,13 +11,5 @@ enum class ETime : uint8
 	Nenhum
 };
 
-UENUM(BlueprintType)
-enum class ETipoColisao : uint8
-{
-	EvitaQueda,
-	Teleport,
-	AtivaSpawn,
-	FinalizaFase,
-	Nenhum
-};
+
 

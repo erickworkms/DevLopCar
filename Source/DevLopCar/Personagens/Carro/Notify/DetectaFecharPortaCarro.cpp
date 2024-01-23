@@ -12,6 +12,5 @@ void UDetectaFecharPortaCarro::Notify(USkeletalMeshComponent* MeshComp, UAnimSeq
 	if (IsValid(Carro))
 	{
 		Carro->FecharPorta = false;
-		GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Yellow," fechou a porta");
 	}
 }

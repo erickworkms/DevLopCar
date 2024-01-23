@@ -5,4 +5,17 @@
 #include "DevLopCarGameInstance.h"
 
 
+void UDevLopCarGameInstance::Init()
+{
+	Super::Init();
+}
 
+void UDevLopCarGameInstance::StartGameInstance()
+{
+	Super::StartGameInstance();
+}
+
+void UDevLopCarGameInstance::Shutdown()
+{
+	Super::Shutdown();
+}

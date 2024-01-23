@@ -20,4 +20,7 @@ class DEVLOPCAR_API UDevLopCarGameInstance : public UGameInstance
 public:
 	UPROPERTY()
 	APlayerController* ControleJogador;
+	virtual void Init() override;
+	virtual void StartGameInstance() override;
+	virtual void Shutdown() override;
 };

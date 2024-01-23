@@ -8,12 +8,6 @@
 #include "UObject/ConstructorHelpers.h"
 #include "Delegates/DelegateSignatureImpl.inl"
 
-
-void ANPC_Base::DanoAtropelamento()
-{
-	GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Yellow,"Bateu");
-}
-
 ANPC_Base::ANPC_Base()
 {
 	VerificaPadroes();

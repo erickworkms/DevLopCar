@@ -2,10 +2,12 @@
 
 //This project was created for the purpose of disseminating knowledge and can be used freely.
 
+#include "Components/CapsuleComponent.h"
 #include "Components/SkeletalMeshComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "UObject/ConstructorHelpers.h"
 #include "Delegates/DelegateSignatureImpl.inl"
+#include "DevLopCar/Personagens/Jogador/Jogador_Base.h"
 #include "DevLopCar/Personagens/NPC/IAControle.h"
 #include "DevLopCar/Personagens/NPC/NPC_Base.h"
 
@@ -36,6 +38,10 @@ void ANPC_Base::InicializaAttachPersonagem()
 {
 	DanoAtaque->AttachToComponent(GetMesh(),
 								  FAttachmentTransformRules::SnapToTargetIncludingScale, "MaoEsqSoquete");
+
+	GetCapsuleComponent()->SetCollisionResponseToChannel(ECC_Pawn, ECR_Ignore);
+	GetCapsuleComponent()->SetCollisionResponseToChannel(ECC_Vehicle, ECR_Block);
+	
 	GetCharacterMovement()->bUseRVOAvoidance = true;
 	GetCharacterMovement()->AvoidanceConsiderationRadius = 500;
 	GetCharacterMovement()->bOrientRotationToMovement = true;

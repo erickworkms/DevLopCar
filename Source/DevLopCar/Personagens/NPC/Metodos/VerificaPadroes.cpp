@@ -12,12 +12,10 @@
 void ANPC_Base::VerificaPadroes()
 {
 	GetCapsuleComponent()->InitCapsuleSize(29.0f, 76.0f);
-	GetCapsuleComponent()->SetCollisionResponseToChannel(ECC_Pawn, ECR_Ignore);
 
 	GetMesh()->SetRelativeLocation(FVector(0.0f, 0.0f, -75));
 	GetMesh()->SetRelativeRotation(FRotator(0.0f, 0.0f, 0.0f));
 	GetMesh()->SetWorldScale3D(FVector(0.70f, 0.70f, 0.70f));
-	GetMesh()->SetCollisionResponseToChannel(ECC_Pawn, ECR_Ignore);
 
 
 	//BaseMesh
@@ -31,7 +29,9 @@ void ANPC_Base::VerificaPadroes()
 	//AnimBlueprint
 	static ConstructorHelpers::FObjectFinder<UClass> AnimacaoEncontrada(*AnimacaoPlayer);
 	GetMesh()->SetAnimInstanceClass(AnimacaoEncontrada.Object);
-
+	
+	GetMesh()->SetCollisionEnabled(ECollisionEnabled::PhysicsOnly);
+	
 	//floats
 	Vida = 100;
 	DistanciaCombate = 100;

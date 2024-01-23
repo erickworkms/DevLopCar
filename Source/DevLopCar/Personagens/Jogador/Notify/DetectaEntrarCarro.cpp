@@ -3,6 +3,8 @@
 //This project was created for the purpose of disseminating knowledge and can be used freely.
 
 #include "DetectaEntrarCarro.h"
+
+#include "DevLopCar/Personagens/Carro/Carro_Base.h"
 #include "DevLopCar/Personagens/Jogador/Jogador_Base.h"
 
 void UDetectaEntrarCarro::NotifyBegin(USkeletalMeshComponent* MeshComp, UAnimSequenceBase* Animacao,
@@ -16,7 +18,6 @@ void UDetectaEntrarCarro::NotifyBegin(USkeletalMeshComponent* MeshComp, UAnimSeq
 		{
 			Cast<ACarro_Base>(Jogador->Veiculo)->AbrirPorta = true;
 			Cast<ACarro_Base>(Jogador->Veiculo)->GetMesh()->SetAllBodiesBelowPhysicsBlendWeight("PortaEsquerdaJoint",0,true,true);
-			GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Yellow," abriu a porta");
 		}
 	}
 }

@@ -4,16 +4,12 @@
 #include "Camera/CameraComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Components/SkeletalMeshComponent.h"
-#include "DevLopCar/Controles/GamePlayController.h"
 #include "DevLopCar/Personagens/Jogador/Jogador_Base.h"
-#include "Kismet/GameplayStatics.h"
 
 void AJogador_Base::VirarCameraFrente(float valor)
 {
 	float RotacaoCamera = CameraPrincipal->GetSocketRotation("none").Pitch * -1;
-
-	AnguloCameraY = 0.0f;
-
+	
 	//Este é o valor maximo para cima e para baixo da camera
 	if (RotacaoCamera >= 49 && RotacaoCamera <= -15)
 	{
