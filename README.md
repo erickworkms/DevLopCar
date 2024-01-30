@@ -1,7 +1,7 @@
 # DevLopCar
 Exemplo de um jogo integrando veiculos em Unreal C++
 
-Utiliza conceitos básicos de jogos Hack n Slash em Unreal C++. Todos os modelos 3D e animações são publicos e disponiveis no site do Mixamo da adobe(As animações com o carro foram feitas por mim também),e apenas o carro foi modelado por mim. O projeto tem foco exclusivamente na programação e aplicação de conceitos de gameplay. Pode ser um guia de aprendizado para quem tiver interesse no básico para se criar um jogo em Unreal C++.
+Utiliza conceitos básicos de jogos com veiculos em Unreal C++. Todos os modelos 3D e animações são publicos e disponiveis no site do Mixamo da adobe(As animações com o carro foram feitas por mim também),e apenas o carro foi modelado por mim. O projeto tem foco exclusivamente na programação e aplicação de conceitos de gameplay. Pode ser um guia de aprendizado para quem tiver interesse no básico para se criar um jogo em Unreal C++.
 
 Use o mouse e teclado para jogar. A tecla de espaço faz o personagem pular, ASWD para se movimentar, E para entrar e sair do carro,Mouse para controlar a camera. São 4 personagens, no menu de escolha cada um deles estara relacionado a um tipo de linguagem de programação.
 
@@ -11,7 +11,7 @@ Link para download do Executavel: https://www.dropbox.com/scl/fi/6bvb1od1p7bc960
 
 Example of a game integrating vehicles in Unreal C++
 
-Uses basic Hack n Slash game concepts in Unreal C++. All 3D models and animations are public and available on Adobe's Mixamo website (Car animations were also created by me), and only the car was modeled by me. The project focuses exclusively on programming and applying gameplay concepts. It can be a learning guide for those interested in the basics of creating a game in Unreal C++.
+Uses basic Vehicle game concepts in Unreal C++. All 3D models and animations are public and available on Adobe's Mixamo website (Car animations were also created by me), and only the car was modeled by me. The project focuses exclusively on programming and applying gameplay concepts. It can be a learning guide for those interested in the basics of creating a game in Unreal C++.
 
 Use the mouse and keyboard to play. The space key makes the character jump, ASWD to move, E to enter and exit the car, Mouse to control the camera. There are 4 characters, and in the selection menu, each of them is related to a programming language.
 
